@@ -2,6 +2,7 @@ package iteration
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -9,7 +10,7 @@ func TestRepeat(t *testing.T) {
 
 	assertCorrentMessae := func(t testing.TB, got, want string){
 		t.Helper()
-		if got != want {
+		if !strings.Contains(got, want) {
 			t.Errorf("expected %q but got %q", got, want)
 		}
 	}
